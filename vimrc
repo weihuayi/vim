@@ -1,8 +1,8 @@
 execute pathogen#infect()
 
-source general.vim
-source fcitx.vim
-source program.vim
-source pytest.vim
+source ~/.vim/myconfig/general.vim
+source ~/.vim/myconfig/fcitx.vim
+source ~/.vim/myconfig/program.vim
+source ~/.vim/myconfig/pytest.vim
 
 

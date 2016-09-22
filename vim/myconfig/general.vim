@@ -1,6 +1,4 @@
 
-" 开启文件类型侦测
-filetype on
 set ts=4
 set shiftwidth=4
 set softtabstop=4
@@ -13,17 +11,17 @@ set number
 set nrformats=
 set textwidth=84
 set nocompatible
+
 " Syntax highlighting and validate
 syntax enable " syntax highlighting 
+
+filetype on
 filetype plugin on " try to detect filetypes
 filetype indent plugin on " enable loading indent filesfor filetypes
 language en_US.utf8
 
-" 禁止产生swp文件
+"forbiden generate swap file 
 set noswapfile
-
-" 颜色主题
-" colorscheme molokai
 
 cnoremap <expr> %% getcmdtype( ) == ':' ? expand('%:h').'/' : '%%'
 nnoremap <F2>:set nonumber!<CR>:set foldcolumn=0<CR>
