@@ -23,7 +23,7 @@ language en_US.utf8
 set noswapfile
 
 " 颜色主题
-colorscheme molokai
+" colorscheme molokai
 
 cnoremap <expr> %% getcmdtype( ) == ':' ? expand('%:h').'/' : '%%'
 nnoremap <F2>:set nonumber!<CR>:set foldcolumn=0<CR>
