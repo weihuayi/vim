@@ -1,0 +1,5 @@
+#!/bin/bash
+
+src_dir = `pwd`
+ln -s $src_dir/vimrc ~/.vimrc
+ln -s $src_dir/vim ~/.vim
