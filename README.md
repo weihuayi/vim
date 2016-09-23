@@ -4,7 +4,7 @@
 ## Clone and Install
 
 ```
-$ git clone --recurse-submodules https://github.com/weihauyi/vim.git
+$ git clone --recurse-submodules https://github.com/weihuayi/vim.git
 $ cd vim/
 $ chmod 755 install
 $ ./install
