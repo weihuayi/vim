@@ -12,6 +12,10 @@ set nrformats=
 set textwidth=84
 set nocompatible
 
+" Add 'k' to the list to enable dictionary completion source
+set complete+=k
+au FileType * execute 'setlocal dict+=~/.vim/words/'.&filetype.'.md'
+
 " Syntax highlighting and validate
 syntax enable " syntax highlighting 
 
