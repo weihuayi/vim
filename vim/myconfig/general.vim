@@ -9,12 +9,16 @@ set ruler
 set showcmd
 set number
 set nrformats=
-set textwidth=84
+set textwidth=79
 set nocompatible
 
 " Add 'k' to the list to enable dictionary completion source
 set complete+=k
-au FileType * execute 'setlocal dict+=~/.vim/words/'.&filetype.'.md'
+set complete+=t
+"autocmd FileType * execute 'setlocal dict+=~/.vim/words/'.&filetype.'.md'
+set dict+=~/.vim/words/cmake.md
+set dict+=~/.vim/words/why.md
+set dict+=~/.vim/words/moab.md
 
 " Syntax highlighting and validate
 syntax enable " syntax highlighting 
