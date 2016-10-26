@@ -45,3 +45,5 @@ autocmd VimEnter * iunmap <TAB>
 nmap <F3> i<C-R>="TIME: "+strftime("%Y-%m-%d %a %I:%M %p")<CR><Esc>
 imap <F3> <C-R>="TIME: "+strftime("%Y-%m-%d %a %I:%M %p")<CR>
 
+" matchit
+runtime macros/matchit.vim
