@@ -20,6 +20,9 @@ set dict+=~/.vim/words/cmake.md
 set dict+=~/.vim/words/why.md
 set dict+=~/.vim/words/moab.md
 
+set encoding=utf-8
+set fileencodings=utf-8,GBK 
+
 " Syntax highlighting and validate
 syntax enable " syntax highlighting 
 
