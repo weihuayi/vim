@@ -6,13 +6,8 @@
 ```
 $ git clone --recurse-submodules https://github.com/weihuayi/vim.git
 $ cd vim/
-$ chmod 755 install
+$ chmod +x install
 $ ./install
 ```
 
-## Delete a Submodule
 
-1. delete the reference in .gitmodules and .git/config
-1. git add .
-1. git rm --cached 
-1. rm bundle/***
