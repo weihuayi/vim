@@ -51,5 +51,8 @@ imap <F3> <C-R>=strftime("%Y.%m.%d")<CR>
 nmap <F4> i<C-R>=strftime("%H:%M:%S")<CR><Esc>
 imap <F4> <C-R>=strftime("%H:%M:%S")<CR>
 
+nmap <F5> i<C-R>=strftime("%Y.%m.%d %a, %H:%M:%S")<CR><Esc>
+imap <F5> <C-R>=strftime("%Y.%m.%d %a, %H:%M:%S")<CR>
+
 " matchit
 runtime macros/matchit.vim
