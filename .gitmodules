@@ -22,9 +22,6 @@
 [submodule "vim/bundle/gundo"]
 	path = vim/bundle/gundo
 	url = https://github.com/sjl/gundo.vim.git
-[submodule "vim/bundle/pydoc"]
-	path = vim/bundle/pydoc
-	url = https://github.com/fs111/pydoc.vim.git
 [submodule "vim/bundle/makegreen"]
 	path = vim/bundle/makegreen
 	url = https://github.com/reinh/vim-makegreen
@@ -52,3 +49,18 @@
 [submodule "vim/bundle/vim-latex"]
 	path = vim/bundle/vim-latex
 	url = https://github.com/vim-latex/vim-latex.git
+[submodule "vim/bundle/ack"]
+	path = vim/bundle/ack
+	url = https://github.com/mileszs/ack.vim.git
+[submodule "vim/bundle/molokai"]
+	path = vim/bundle/molokai
+	url = https://github.com/tomasr/molokai.git
+[submodule "vim/bundle/vim-cmake-project"]
+	path = vim/bundle/vim-cmake-project
+	url = https://github.com/vim-scripts/vim-cmake-project.git
+[submodule "vim/bundle/vim-colors-solarized"]
+	path = vim/bundle/vim-colors-solarized
+	url = https://github.com/altercation/vim-colors-solarized.git
+[submodule "vim/bundle/sqlcomplete"]
+	path = vim/bundle/sqlcomplete
+	url = https://github.com/vim-scripts/SQLComplete.vim.git

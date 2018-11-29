@@ -1,0 +1,5 @@
+#!/bin/bash
+# 删除　submodule 
+git submodule deinit -f -- $1
+rm -rf -f .git/modules/$1
+git rm -f $1
