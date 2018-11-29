@@ -7,6 +7,4 @@ source ~/.vim/myconfig/program.vim
 source ~/.vim/myconfig/markdown.vim
 source ~/.vim/myconfig/syntastic.vim
 
-autocmd Filetype tex setl updatetime=1
-let g:livepreview_previewer = 'evince'
 

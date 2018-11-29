@@ -55,9 +55,6 @@
 [submodule "vim/bundle/molokai"]
 	path = vim/bundle/molokai
 	url = https://github.com/tomasr/molokai.git
-[submodule "vim/bundle/vim-cmake-project"]
-	path = vim/bundle/vim-cmake-project
-	url = https://github.com/vim-scripts/vim-cmake-project.git
 [submodule "vim/bundle/vim-colors-solarized"]
 	path = vim/bundle/vim-colors-solarized
 	url = https://github.com/altercation/vim-colors-solarized.git
