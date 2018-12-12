@@ -1,5 +1,3 @@
-sudo apt install python3-rope python3-flake8 
-
 git submodule add http://github.com/tpope/vim-fugitive.git vim/bundle/fugitive
 git submodule add https://github.com/msanders/snipmate.vim.git vim/bundle/snipmate
 git submodule add https://github.com/tpope/vim-surround.git vim/bundle/surround
