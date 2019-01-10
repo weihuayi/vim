@@ -44,7 +44,6 @@ git submodule add https://github.com/python-rope/ropevim.git vim/bundle/ropevim
 git submodule add https://github.com/nvie/vim-flake8.git vim/bundle/vim-flake8
 git submodule add https://github.com/tomasr/molokai.git vim/bundle/molokai
 git submodule add https://github.com/scrooloose/syntastic.git vim/bundle/syntastic
-#git submodule add https://github.com/vim-scripts/vim-cmake-project.git vim/bundle/vim-cmake-project
 git submodule add https://github.com/altercation/vim-colors-solarized.git vim/bundle/vim-colors-solarized
 git submodule add https://github.com/plasticboy/vim-markdown.git vim/bundle/vim-markdown
 git submodule add https://github.com/vim-scripts/SQLComplete.vim.git vim/bundle/sqlcomplete
