@@ -9,8 +9,9 @@ set ruler
 set showcmd
 set number
 set nrformats=
-set textwidth=79
+set textwidth=80
 set nocompatible
+set formatoptions+=m
 
 " Add 'k' to the list to enable dictionary completion source
 set complete+=k
