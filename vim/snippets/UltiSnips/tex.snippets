@@ -1,0 +1,188 @@
+global !p
+texMathZones = ['texMathZone'+x for x in ['A', 'AS', 'B', 'BS', 'C',
+'CS', 'D', 'DS', 'E', 'ES', 'F', 'FS', 'G', 'GS', 'H', 'HS', 'I', 'IS',
+'J', 'JS', 'K', 'KS', 'L', 'LS', 'DS', 'V', 'W', 'X', 'Y', 'Z']]
+
+texIgnoreMathZones = ['texMathText']
+
+texMathZoneIds = vim.eval('map('+str(texMathZones)+", 'hlID(v:val)')")
+texIgnoreMathZoneIds = vim.eval('map('+str(texIgnoreMathZones)+", 'hlID(v:val)')")
+
+ignore = texIgnoreMathZoneIds[0]
+
+def math():
+    synstackids = vim.eval("synstack(line('.'), col('.') - (col('.')>=2 ? 1 : 0))")
+    try:
+        first = next(
+            i for i in reversed(synstackids)
+            if i in texIgnoreMathZoneIds or i in texMathZoneIds
+        )
+        return first != ignore
+    except StopIteration:
+        return False
+endglobal
+
+######################################
+#  Generate the general environment  #
+######################################
+
+snippet "b(egin)?" "begin{} / end{}" br
+\begin{${1:something}}
+	${0:${VISUAL}}
+\end{$1}
+endsnippet
+
+snippet ctex "Chinese document"
+% !Mode:: "TeX:UTF-8"
+\documentclass{${1:book}}
+\input{../../template/en_preamble.tex}
+\input{../../template/xecjk_preamble.tex}
+
+\usepackage{setspace}
+\renewcommand{\baselinestretch}{1.5}
+
+\usepackage{xpinyin}
+\setpinyin{为}{wei2}
+
+\begin{document}
+\title{${2:title}}
+\author{魏华祎}
+\date{\chntoday}
+\maketitle
+$3
+\end{document}
+endsnippet
+
+snippet tex "Chinese document"
+% !Mode:: "TeX:UTF-8"
+\documentclass{${1:book}}
+\input{../../template/en_preamble.tex}
+
+\begin{document}
+\title{${2:title}}
+jauthor{魏华祎}
+\date{\chntoday}
+\maketitle
+$3
+\end{document}
+endsnippet
+
+###################################
+#  Generate the math environment  #
+###################################
+
+pre_expand "import os; os.system('fcitx-remote -c')"
+snippet im "inline math formula" bA 
+$ ${1:${VISUAL}} $ $0
+endsnippet
+
+pre_expand "import os; os.system('fcitx-remote -c')"
+snippet lm "interline formula" bA 
+$$
+${1:${VISUAL}}
+$$ $0
+endsnippet
+
+snippet pm "matrix in ()" 
+\begin{pmatrix}
+	${1:${VISUAL}} \\\\
+\end{pmatrix} $0
+endsnippet
+
+snippet vm "matrix in | |" 
+\begin{vmatrix}
+	${1:${VISUAL}} \\\\ $2
+\end{vmatrix} $0
+endsnippet
+
+snippet bm "matrix in [ ]" 
+\begin{bmatrix}
+	${1:${VISUAL}} \\\\ $2
+\end{bmatrix}
+$0
+endsnippet
+
+snippet dm "Math" wA
+\[
+$1
+\] $0
+endsnippet
+
+##############################
+#  Math in Math Environment  #
+##############################
+
+context "math()"
+snippet \| "norm" A
+\|${1:${VISUAL}}\|$0
+endsnippet
+
+priority 10
+context "math()"
+snippet "bar" "bar" riA
+\overline{$1}$0
+endsnippet
+
+priority 100
+context "math()"
+snippet "([a-zA-Z])bar" "bar" riA
+\overline{`!p snip.rv=match.group(1)`}
+endsnippet
+
+priority 10
+context "math()"
+snippet "hat" "hat" riA
+\hat{$1}$0
+endsnippet
+
+priority 100
+context "math()"
+snippet "([a-zA-Z])hat" "hat" riA
+\hat{`!p snip.rv=match.group(1)`}
+endsnippet
+
+context "math()"
+snippet "(\\?\w+)(,\.|\.,)" "Vector postfix" riA
+\vec{`!p snip.rv=match.group(1)`}
+endsnippet
+
+context "math()"
+snippet l{ "surrounding" i
+\left\{$1\right\} $0
+endsnippet
+
+context "math()"
+snippet l[ "surrounding" i 
+\left[ $1 \right] $0
+endsnippet
+
+context "math()"
+snippet l( "surrounding" i
+\left($1\right) $0
+endsnippet
+
+context "math()"
+snippet l| "surrounding" i
+\left($1\right) $0
+endsnippet
+
+context "math()"
+snippet '((\d+)|(\d*)(\\)?([A-Za-z]+)((\^|_)(\{\d+\}|\d))*)/' "Fraction" wrA
+\\frac{`!p snip.rv = match.group(1)`}{$1}$0
+endsnippet
+
+context "math()"
+snippet // "Fraction" iA
+\\frac{ $1 }{ $2 }$0
+endsnippet
+
+context "math()"
+snippet '([A-Za-z])(\d)' "auto subscript" wrA
+`!p snip.rv = match.group(1)`_`!p snip.rv = match.group(2)`
+endsnippet
+
+context "math()"
+snippet '([A-Za-z])_(\d\d)' "auto subscript2" wrA
+`!p snip.rv = match.group(1)`_{`!p snip.rv = match.group(2)`}
+endsnippet
+

@@ -1,0 +1,232 @@
+
+global !p
+def create_table(snip):
+	rows = snip.buffer[snip.line].split('x')[0]
+	cols = snip.buffer[snip.line].split('x')[1]
+
+	int_val = lambda string: int(''.join(s for s in string if s.isdigit()))
+
+	rows = int_val(rows)
+	cols = int_val(cols)
+
+	offset = cols + 1
+	old_spacing = snip.buffer[snip.line][:snip.buffer[snip.line].rfind('\t') + 1]
+
+	snip.buffer[snip.line] = ''
+
+	final_str = old_spacing + "\\begin{tabular}{|" + "|".join(['$' + str(i + 1) for i in range(cols)]) + "|}\n"
+
+	for i in range(rows):
+		final_str += old_spacing + '\t'
+		final_str += " & ".join(['$' + str(i * cols + j + offset) for j in range(cols)])
+
+		final_str += " \\\\\\\n"
+
+	final_str += old_spacing + "\\end{tabular}\n$0"
+
+	snip.expand_anon(final_str)
+
+def add_row(snip):
+	row_len = int(''.join(s for s in snip.buffer[snip.line] if s.isdigit()))
+	old_spacing = snip.buffer[snip.line][:snip.buffer[snip.line].rfind('\t') + 1]
+
+	snip.buffer[snip.line] = ''
+
+	final_str = old_spacing
+	final_str += " & ".join(['$' + str(j + 1) for j in range(row_len)])
+	final_str += " \\\\\\"
+
+	snip.expand_anon(final_str)
+endglobal
+
+
+##############################################
+#  Snippets for Math Environment Generating  #
+##############################################
+
+snippet alg "algorithm "
+$$
+\begin{align}
+& \\\\
+\end{align}
+$$
+endsnippet
+
+snippet pm "matrix in ()" i
+\begin{pmatrix}
+	${1:${VISUAL}} \\\\ $2
+\end{pmatrix} $0
+endsnippet
+
+snippet vm "matrix in | |" i
+\begin{vmatrix}
+	${1:${VISUAL}} \\\\ $2
+\end{vmatrix} $0
+endsnippet
+
+snippet bm "matrix in [ ]" i
+\begin{bmatrix}
+	${1:${VISUAL}} \\\\ $2
+\end{bmatrix} $0
+endsnippet
+
+pre_expand "import os; os.system('fcitx-remote -c')"
+snippet im "inline math formula" A 
+$$${1:${VISUAL}}$$ $0
+endsnippet
+
+pre_expand "import os; os.system('fcitx-remote -c')"
+snippet lm "interline formula" A 
+$$
+${1:${VISUAL}}
+$$ $0
+endsnippet
+
+snippet eqnn "Equation without a number" b
+\begin{equation*}
+	${0:${VISUAL}}
+\end{equation*}
+endsnippet
+
+snippet al "Align" b
+\begin{align}
+	${0:${VISUAL}}
+\end{align}
+endsnippet
+
+snippet alnn "Align without a number" b
+\begin{align*}
+	${0:${VISUAL}}
+\end{align*}
+endsnippet
+
+snippet eqa "Equation array" b
+\begin{eqnarray}
+	${1:${VISUAL}} & ${2:${VISUAL}} & ${0:${VISUAL}}
+\end{eqnarray}
+endsnippet
+
+snippet eqann "Equation array without a number" b
+\begin{eqnarray*}
+	${1:${VISUAL}} & ${2:${VISUAL}} & ${0:${VISUAL}}
+\end{eqnarray*}
+endsnippet
+
+
+snippet "b(egin)?" "begin{} / end{}" br
+\begin{${1:something}}
+	${0:${VISUAL}}
+\end{$1}
+endsnippet
+
+snippet tab "tabular / array environment" b
+\begin{${1:t}${1/(t)$|(a)$|(.*)/(?1:abular)(?2:rray)/}}{${2:c}}
+$0${2/(?<=.)(c|l|r)|./(?1: & )/g}
+\end{$1${1/(t)$|(a)$|(.*)/(?1:abular)(?2:rray)/}}
+endsnippet
+
+pre_expand "create_table(snip)"
+snippet "gentbl(\d+)x(\d+)" "Generate table of *width* by *height*" r
+endsnippet
+
+pre_expand "add_row(snip)"
+snippet "tr(\d+)" "Add table row of dimension ..." r
+endsnippet
+
+##############################
+#  Math in Math Environment  #
+##############################
+
+priority 10
+snippet \| "norm" iA
+\|${1:${VISUAL}}\|$0
+endsnippet
+
+priority 100
+snippet l\| "norm" iA
+\left\|${1:${VISUAL}}\right\|$0
+endsnippet
+
+snippet dA "delta A" i
+\delta A
+endsnippet
+
+snippet db "delta b" iA 
+\delta b
+endsnippet
+
+snippet dx "delta x" i 
+\delta x
+endsnippet
+
+snippet s "sum "
+\sum_{$1}^{$2} $0
+endsnippet
+
+snippet for "for loop" 
+\text{for } $1 \text{ to } $2 \\\\
+\quad $3 \\\\
+\text{end for}$0
+endsnippet
+
+snippet txt "text env" 
+\text{ $1 }$0
+endsnippet
+
+snippet '([A-Za-z])I' "subscript" wr
+`!p snip.rv = match.group(1)`^{-1}
+endsnippet
+
+snippet '([A-Za-z])T' "subscript" wr
+`!p snip.rv = match.group(1)`^T
+endsnippet
+
+priority 10
+snippet "b" "bar" ri
+\overline{$1}$0
+endsnippet
+
+priority 10
+snippet "h" "hat" ri
+\hat{$1}$0
+endsnippet
+
+snippet "(\\?\w+)(,\.|\.,)" "Vector postfix" riA
+\vec{`!p snip.rv=match.group(1)`}
+endsnippet
+
+snippet l{ "surrounding" 
+\left\{$1\right\} $0
+endsnippet
+
+snippet l[ "surrounding" 
+\left[$1\right] $0
+endsnippet
+
+snippet l( "surrounding" 
+\left($1\right) $0
+endsnippet
+
+snippet '((\d+)|(\d*)(\\)?([A-Za-z]+)((\^|_)(\{\d+\}|\d))*)/' "Fraction" wrA
+\\frac{`!p snip.rv = match.group(1)`}{$1}$0
+endsnippet
+
+snippet // "Fraction" i
+\\frac{$1}{$2}$0
+endsnippet
+
+snippet _ "auto subscript" w
+_{$1}$0
+endsnippet
+
+snippet ^ "auto subscript" w
+^{$1}$0
+endsnippet
+
+
+
+
+
+
+
+
