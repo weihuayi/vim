@@ -12,7 +12,7 @@ set nrformats=
 set textwidth=80
 set nocompatible
 set formatoptions+=m
-
+hi Comment ctermfg=LightBlue
 " Add 'k' to the list to enable dictionary completion source
 set complete+=k
 set complete+=t
