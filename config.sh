@@ -1,3 +1,4 @@
+
 # Fugitive.vim - a complement to command line git
 git submodule add http://github.com/tpope/vim-fugitive.git vim/bundle/fugitive
 
@@ -38,6 +39,8 @@ git submodule add https://github.com/reinh/vim-makegreen vim/bundle/makegreen
 
 # 
 #
+# speeddating.vim
+git submodule add https://github.com/tpope/vim-speeddating.git vim/bundle/vim-speeddating
 git submodule add https://github.com/vim-scripts/The-NERD-tree.git vim/bundle/nerdtree
 git submodule add https://github.com/jistr/vim-nerdtree-tabs.git vim/bundle/vim-nerdtree-tabs
 git submodule add https://github.com/python-rope/ropevim.git vim/bundle/ropevim
