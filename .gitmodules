@@ -28,39 +28,33 @@
 [submodule "vim/bundle/nerdtree"]
 	path = vim/bundle/nerdtree
 	url = https://github.com/vim-scripts/The-NERD-tree.git
-[submodule "vim/bundle/vim-nerdtree-tabs"]
-	path = vim/bundle/vim-nerdtree-tabs
-	url = https://github.com/jistr/vim-nerdtree-tabs.git
 [submodule "vim/bundle/ropevim"]
 	path = vim/bundle/ropevim
 	url = https://github.com/python-rope/ropevim.git
-[submodule "vim/bundle/vim-flake8"]
-	path = vim/bundle/vim-flake8
-	url = https://github.com/nvie/vim-flake8.git
 [submodule "vim/bundle/syntastic"]
 	path = vim/bundle/syntastic
 	url = https://github.com/scrooloose/syntastic.git
-[submodule "vim/bundle/vim-markdown"]
-	path = vim/bundle/vim-markdown
-	url = https://github.com/plasticboy/vim-markdown.git
-[submodule "vim/bundle/vim-surround"]
-	path = vim/bundle/vim-surround
-	url = https://github.com/tpope/vim-surround.git
-[submodule "vim/bundle/vim-latex"]
-	path = vim/bundle/vim-latex
-	url = https://github.com/vim-latex/vim-latex.git
 [submodule "vim/bundle/ack"]
 	path = vim/bundle/ack
 	url = https://github.com/mileszs/ack.vim.git
 [submodule "vim/bundle/molokai"]
 	path = vim/bundle/molokai
 	url = https://github.com/tomasr/molokai.git
-[submodule "vim/bundle/vim-colors-solarized"]
-	path = vim/bundle/vim-colors-solarized
-	url = https://github.com/altercation/vim-colors-solarized.git
 [submodule "vim/bundle/sqlcomplete"]
 	path = vim/bundle/sqlcomplete
 	url = https://github.com/vim-scripts/SQLComplete.vim.git
-[submodule "vim/bundle/vim-speeddating"]
-	path = vim/bundle/vim-speeddating
+[submodule "vim/bundle/speeddating"]
+	path = vim/bundle/speeddating
 	url = https://github.com/tpope/vim-speeddating.git
+[submodule "vim/bundle/nerdtree-tabs"]
+	path = vim/bundle/nerdtree-tabs
+	url = https://github.com/jistr/vim-nerdtree-tabs.git
+[submodule "vim/bundle/flake8"]
+	path = vim/bundle/flake8
+	url = https://github.com/nvie/vim-flake8.git
+[submodule "vim/bundle/colors-solarized"]
+	path = vim/bundle/colors-solarized
+	url = https://github.com/altercation/vim-colors-solarized.git
+[submodule "vim/bundle/markdown"]
+	path = vim/bundle/markdown
+	url = https://github.com/plasticboy/vim-markdown.git
