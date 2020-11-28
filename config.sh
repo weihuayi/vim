@@ -1,3 +1,4 @@
+
 # Fugitive.vim - a complement to command line git
 git submodule add http://github.com/tpope/vim-fugitive.git vim/bundle/fugitive
 
@@ -36,17 +37,36 @@ git submodule add https://github.com/sjl/gundo.vim.git vim/bundle/gundo
 # test run status with a red or green bar.
 git submodule add https://github.com/reinh/vim-makegreen vim/bundle/makegreen
 
-# 
+# speeddating.vim
+git submodule add https://github.com/tpope/vim-speeddating.git vim/bundle/speeddating
+
 #
 git submodule add https://github.com/vim-scripts/The-NERD-tree.git vim/bundle/nerdtree
-git submodule add https://github.com/jistr/vim-nerdtree-tabs.git vim/bundle/vim-nerdtree-tabs
+
+#
+git submodule add https://github.com/jistr/vim-nerdtree-tabs.git vim/bundle/nerdtree-tabs
+
+#
 git submodule add https://github.com/python-rope/ropevim.git vim/bundle/ropevim
-git submodule add https://github.com/nvie/vim-flake8.git vim/bundle/vim-flake8
+
+#
+git submodule add https://github.com/nvie/vim-flake8.git vim/bundle/flake8
+
+#
 git submodule add https://github.com/tomasr/molokai.git vim/bundle/molokai
+
+#
 git submodule add https://github.com/scrooloose/syntastic.git vim/bundle/syntastic
-git submodule add https://github.com/altercation/vim-colors-solarized.git vim/bundle/vim-colors-solarized
-git submodule add https://github.com/plasticboy/vim-markdown.git vim/bundle/vim-markdown
+
+# 
+git submodule add https://github.com/altercation/vim-colors-solarized.git vim/bundle/colors-solarized
+
+#
+git submodule add https://github.com/plasticboy/vim-markdown.git vim/bundle/markdown
+
+#
 git submodule add https://github.com/vim-scripts/SQLComplete.vim.git vim/bundle/sqlcomplete
+
 git submodule init
 git submodule update
 git submodule foreach git submodule init
