@@ -57,3 +57,75 @@ imap <F4> <C-R>=strftime("%H:%M:%S")<CR>
 
 " matchit
 runtime macros/matchit.vim
+
+" Vundle set up
+set nocompatible              " be iMproved, required
+filetype off                  " required
+
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+" alternatively, pass a path where Vundle should install plugins
+"call vundle#begin('~/some/path/here')
+
+" let Vundle manage Vundle, required
+Plugin 'VundleVim/Vundle.vim'
+
+" Track the engine.
+Plugin 'SirVer/ultisnips'
+
+" Snippets are separated from the engine. Add this if you want them:
+Plugin 'honza/vim-snippets'
+
+Plugin 'tpope/vim-fugitive'
+
+" Surround.vim is all about "surroundings": parentheses, brackets, quotes, XML tags, and more.
+" `cs"'` change surround "" to ''
+Plugin 'tpope/vim-surround'
+
+Plugin 'tpope/vim-git'
+
+" supertab: 自动补全 c-n
+Plugin 'ervandew/supertab'
+
+" Several modern GUI editors list your open buffers as tabs along the top or bottom of your screen
+Plugin 'fholgado/minibufexpl.vim' 
+" 
+" Command-T is a Vim plug-in that provides an extremely fast "fuzzy" mechanism for:
+" * Opening files and buffers
+" * Jumping to tags and help
+" * Running commands, or previous searches and commands
+"
+" with a minimal number of keystrokes.
+Plugin 'wincent/Command-T' 
+
+" Ack 是 CLI 的全局搜索工具, 比Vim自带的grep快很多, 
+" 它可以通过Vim Quickfix窗口来提供代码搜索的结果.
+Plugin 'mileszs/ack.vim'
+
+call vundle#end()            " required
+filetype plugin indent on    " required
+" To ignore plugin indent changes, instead use:
+"filetype plugin on
+"
+" Brief help
+" :PluginList       - lists configured plugins
+" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
+" :PluginSearch foo - searches for foo; append `!` to refresh local cache
+" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
+"
+" see :h vundle for more details or wiki for FAQ
+" Put your non-Plugin stuff after this line
+"
+
+
+
+" Trigger configuration. You need to change this to something other than <tab> if you use one of the following:
+" - https://github.com/Valloric/YouCompleteMe
+" - https://github.com/nvim-lua/completion-nvim
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+
+" If you want :UltiSnipsEdit to split your window.
+let g:UltiSnipsEditSplit="vertical"

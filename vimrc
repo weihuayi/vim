@@ -1,5 +1,5 @@
-call pathogen#infect()
-call pathogen#helptags()
+"call pathogen#infect()
+"call pathogen#helptags()
 
 source ~/.vim/myconfig/general.vim
 source ~/.vim/myconfig/fcitx.vim
