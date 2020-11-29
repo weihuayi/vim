@@ -10,3 +10,5 @@ cd ${src_dir}
 ln -s ${src_dir}/vimrc ~/.vimrc
 ln -s ${src_dir}/vim ~/.vim
 
+vim +PluginInstall +qall
+

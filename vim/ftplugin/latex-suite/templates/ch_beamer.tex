@@ -1,0 +1,79 @@
+% !Mode:: "TeX:UTF-8"
+\documentclass[aspectratio=169]{beamer}
+\usetheme{Darmstadt}
+\useinnertheme{rounded}
+
+\usecolortheme{beaver}
+%\usecolortheme{albatross}
+%\usecolortheme{beetle}
+%\usecolortheme{crane}
+%\usecolortheme{dolphin}
+%\usecolortheme{dove}
+%\usecolortheme{fly}
+%\usecolortheme{lily}
+%\usecolortheme{orchid}
+%\usecolortheme{rose}
+%\usecolortheme{seagull}
+%\usecolortheme{seahorse}
+%\usecolortheme{whale}
+%\usecolortheme{wolverine}
+%\usecolortheme{default}
+
+
+\setbeamerfont*{frametitle}{size=\large,series=\bfseries}
+\setbeamertemplate{navigation symbols}{}
+
+\setbeamersize{text margin left=0.5cm}
+\setbeamersize{text margin right=0.5cm}
+
+\input{../../en_preamble.tex}
+\input{../../xecjk_preamble.tex}
+
+\usepackage{multimedia}
+
+\usepackage{biblatex}
+\addbibresource{ref.bib}
+
+\usefonttheme[onlymath]{serif}
+\numberwithin{subsection}{section}
+%\usefonttheme[onlylarge]{structurebold}
+\setbeamercovered{transparent}
+
+
+\title{<title>}
+\author{<author>}
+
+\institute[XTU]{
+<email>\\
+\vspace{5pt}
+<institute>\\
+}
+ 
+\date[XTU]
+{
+    \today
+}
+
+\AtBeginSection[]
+{
+  \frame<beamer>{ 
+    \frametitle{目录}   
+    \tableofcontents[currentsection] 
+  }
+}
+
+\AtBeginSubsection[]
+{
+  \frame<beamer>{ 
+    \frametitle{目录}   
+    \tableofcontents[currentsubsection] 
+  }
+}
+
+\begin{document}
+
+\begin{frame}
+  \titlepage
+\end{frame}
+
+\end{document}
