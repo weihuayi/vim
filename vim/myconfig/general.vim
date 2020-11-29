@@ -109,8 +109,6 @@ Plugin 'reinh/vim-makegreen'
 
 Plugin 'vim-scripts/The-NERD-tree'
 
-Plugin 'python-rope/ropevim'
-
 Plugin 'scrooloose/syntastic'
 
 Plugin 'tomasr/molokai'
@@ -123,8 +121,9 @@ Plugin 'nvie/vim-flake8'
 
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'plasticboy/vim-markdown'
-"Plugin 'vim-scripts/SQLComplete.vim'
-"
+
+Plugin 'vim-latex/vim-latex'
+
 call vundle#end()            " required
 filetype plugin indent on    " required
 " To ignore plugin indent changes, instead use:
