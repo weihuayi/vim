@@ -1,3 +1,4 @@
+autocmd Filetype cpp setlocal expandtab tabstop=2 shiftwidth=2
 
 function! Ih()
     let str=expand('%:t:r').'_h'
