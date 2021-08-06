@@ -124,7 +124,10 @@ Plugin 'jistr/vim-nerdtree-tabs'
 Plugin 'nvie/vim-flake8'
 
 Plugin 'altercation/vim-colors-solarized'
+
 Plugin 'plasticboy/vim-markdown'
+
+Plugin 'iamcco/markdown-preview.nvim'
 
 
 call vundle#end()            " required
@@ -154,3 +157,5 @@ let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
 
 " If you want :UltiSnipsEdit to split your window.
 let g:UltiSnipsEditSplit="vertical"
+
+let g:vim_markdown_math = 1
