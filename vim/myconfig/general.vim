@@ -107,6 +107,17 @@ Plugin 'wincent/Command-T'
 " 它可以通过Vim Quickfix窗口来提供代码搜索的结果.
 Plugin 'mileszs/ack.vim'
 
+Plugin 'Valloric/YouCompleteMe'
+let g:ycm_python_binary_path = '/usr/bin/python3'
+let g:ycm_server_python_interpreter='/usr/bin/python3'
+let g:ycm_autoclose_preview_window_after_insertion = 1
+let g:ycm_autoclose_preview_window_after_completion = 1
+" Shutdown YCM with semantic support for C-family languages through experimental clangd:
+" let g:ycm_use_clangd = 0
+let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/third_party/ycmd/.ycm_extra_conf.py'
+" let g:ycm_confirm_extra_conf = 0
+"let g:ycm_clangd_binary_path = '/usr/bin/clangd'
+
 Plugin 'sjl/gundo.vim'
 
 Plugin 'reinh/vim-makegreen'
