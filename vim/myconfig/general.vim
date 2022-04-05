@@ -44,7 +44,7 @@ set cc=80
 let g:indent_guides_guide_size=1
 
 
-autocmd VimEnter * iunmap <TAB>
+" autocmd VimEnter * iunmap <TAB>
 
 nmap <F3> i<C-R>=strftime("%Y.%m.%d")<CR><Esc>
 imap <F3> <C-R>=strftime("%Y.%m.%d")<CR>
